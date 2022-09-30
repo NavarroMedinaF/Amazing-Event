@@ -1,0 +1,267 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    width: auto;
+    min-height: 100vh;
+}
+
+.favicon{
+height: 4px;
+width: 4px;
+
+}
+.titlenav {
+    border-bottom: 0.2rem solid white !important;
+}
+
+.header {
+    border-bottom: 0.2rem solid white !important;
+}
+
+.logoAevents {
+    width: 15rem;
+    max-width: 65vw;
+    height: auto;
+}
+
+.nav-link {
+    color: white;
+    background-color: #07cc22;
+    text-align: center;
+}
+
+li>a{
+    font-size: 1.25rem !important;
+}
+.active {
+    background-color: #07cc22 !important;
+}
+
+.nav-link:hover {
+    background-color: #07cc22;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.rowtitlenav {
+    text-align: center;
+    
+}
+
+.titlenav {
+    background-color: #07cc22;
+}
+
+.input{
+width: 25rem;
+}
+
+.backforwardbuttons {
+    color: white;
+}
+
+.backforwardbuttons:hover {
+    color: #212529;
+}
+
+main { 
+    min-height: 66vh;
+} 
+.card-title{
+align-items: center !important;
+display: flex!important;
+height: 50px!important;
+justify-content: center!important;
+}
+
+.card-textfixed{
+    align-items: center !important;
+display: flex!important;
+height: 100px!important;
+justify-content: center!important;
+}
+
+.rowfooter {
+    text-align: center;
+}
+
+.footer {
+    border-top: 0.2rem solid white !important;
+    height: 4rem;
+    margin-top: -4rem;
+    align-self: flex-end;
+    
+}
+.text_footer{
+color: black;
+font-weight: 500;
+}
+
+.footericons {
+    text-decoration: none;
+}
+
+
+.form-check {
+    padding-right: 1rem;
+}
+
+.filterow {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-check-input:checked {
+    background-color: #07cc22!important;
+    border: none;
+}
+
+.searchbutton {
+    color: white!important; 
+    border: none;
+    
+}
+
+.searchbutton:hover {
+    background-color: white;
+    color: #212529!important;
+}
+
+.contcards {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.card-img-top {
+    height: 10rem;
+    
+    border-radius: 00.3rem;
+}
+
+.card {
+    min-height: 25rem;
+    border: 0.2rem solid white;
+    
+}
+
+.card-text {
+    color: #212529;
+    min-height: 4.5rem;
+}
+
+.card-price {
+    color: #212529;
+    min-height: 2rem;
+}
+
+.card-title {
+    color: #212529;
+    
+}
+
+.viewmorebutton { 
+    color: white;
+    background-color: #07cc22;
+    border: none;
+    font-weight: bold;
+    align-self: center;
+}
+
+.viewmorebutton:hover {
+    background-color: #212529;
+
+}
+
+.submitbutton {
+    color: white;
+    background-color: #07cc22;
+    text-align: center;
+    border: none;
+}
+
+.submitbutton:hover {
+    background-color: white;
+    color:#07cc22 ;
+}
+
+.table {
+    background-color: white;
+
+}
+
+.detailcard {
+   min-height: 50vh;
+    width: auto;
+}
+
+.logo-redes{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    margin: 0 5px 5px  0 ;
+    cursor: pointer;
+}
+
+.icono_billete{
+height: 1.5rem;
+width: 1.5rem;
+}
+
+.icono_serch{
+height: 1.3rem;
+width: 1.3rem;
+}
+
+.boton_search:hover{
+    background-color: #07cc22;
+    
+}
+   
+
+.card-textDC {
+    color: #212529;
+}
+
+.imgDC {
+    max-height: 15rem;
+    max-width: 60vw;
+    border-radius: 00.3rem;
+    margin-bottom: 1rem;
+}
+
+.alertSing{
+    background-color: #07cc22 !important;
+    color: white;
+}
+
+.imgAlertSing{
+    height: auto !important;
+}
+
+
+@media (max-width: 425px) {
+    .arrows{
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .detailcard{
+        height: 40vh;
+        width: 100vw;
+    }
+    .input{
+        width: 11.3rem;
+        align-self: center;
+        }
+   .dropdown1{
+justify-content: flex-start !important;
+   }
+   
+}
+

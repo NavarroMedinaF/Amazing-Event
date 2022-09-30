@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <title>Amazing Events</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+</head>
+
+<body class="bg-dark">
+  <div id="app">
+
+    <header class="header container-fluid d-flex flex-wrap justify-content-center py-2 bg-dark">
+      <img class="d-flex me-5 ms-5 mb-3 mt-3 logoAevents" src="./assets/images/logoAevents.png" alt="" />
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-2">
+              <a href="./index.html" class="nav-link  " aria-current="page">Home</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a href="./pastEvents.html" class="nav-link active ">Past Events</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a href="./upcomingEvents.html" class="nav-link ">Upcoming Events</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a href="./contact.html" class="nav-link ">Contact</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a href="./stats.html" class="nav-link ">Stats</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="titlenav">
+      <div class="container-fluid pb-2 pt-2">
+        <div class="row align-items-center justify-content-center d-flex flex-wrap rowtitlenav">
+          <div class="col coltitlenav mb-1 mt-1 ">
+            <a class="backforwardbuttons" href="./index.html">
+              <img src="./assets/images/arrow-izq.png" alt="" class="arrows">
+            </a>
+          </div>
+          <div class="col-sm-6 coltitlenav mb-1 mt-1 titletitlenav">
+            <h1>Past Events</h1>
+          </div>
+          <div class="col coltitlenav mb-1 mt-1">
+            <a class="backforwardbuttons" href="./upcomingEvents.html">
+              <img src="./assets/images/arrow-der.png" alt="" class="arrows">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container-fluid contmain">
+      <div class="container py-4 contfilters">
+        <div class="row">
+          <div class="col-sm-6 d-flex flex-wrap justify-content-center align-items-center dropdown1">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2" id="divCheckbox">
+                <li v-for="category in arrayFilterCategory">
+
+                  <input class="form-check-input" type="checkbox" :value="category" :id="category"
+                    v-model="arrayFilterCategoryChecked" />
+                  <label class="form-check-label" :for="category">{{category}} </label>
+
+
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="col-sm-6 d-flex flex-wrap justify-content-center align-items-center">
+            <form class="d-flex my-2">
+              <input class="form-control me-2 input" type="text" placeholder="Search" aria-label="Search"
+                id="inputSearch" v-model="inputValue" @keyup="filterSearch(arrayFilterCards)">
+              {{search}}
+              <button class="btn btn-outline-success searchbutton boton_search" type="submit">
+                <img src="./assets/images/lupa.png" alt="" class="icono_serch">
+
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="contcardsId"
+      class="contcards container-fluid d-flex flex-wrap align-items-center justify-content-center">
+      <div v-if="arrayFilterCards.length!=0"></div>
+      <div v-for="card in arrayFilterCards "
+        class="card my-2 mx-2 align-items-center justify-content-center d-flex flex-wrap" style="width: 18rem">
+        <img v-bind:src="card.image" class="card-img-top" :alt="card.image" />
+        <div class="card-body">
+          <h5 class="card-title">{{card.name}}</h5>
+          <p class="card-text card-textfixed">{{card.description}}</p>
+          <p class="card-text card-price">Price: US$ {{card.price}} <img src="./assets/images/billete-de-dolar.png"
+              class="icono_billete" alt="billete"></p>
+          <a :href="'./detailsVUE.html?id=' + card._id" class="btn btn-primary viewmorebutton">View more</a>
+        </div>
+      </div>
+      <div  v-show="arrayFilterCards.length==0">
+        <div class="alertSing card my-2 mx-2 align-items-center justify-content-center d-flex flex-wrap">
+          <h3 class="display-5 ">There are no events to show</h3>
+          <img src="./assets/images/sinEventos1.jpg" class="card-img-top imgAlertSing" alt="error" />
+
+        </div>
+      </div>
+     
+    </div>
+
+    </main>
+
+    <footer class="container-fluid footer mt-auto py-2 bg-dark">
+      <div class="row align-items-center justify-content-center d-flex flex-wrap rowfooter">
+        <div class="col-sm-6 mb-1 mt-1">
+          <a href="https://www.instagram.com/amazingevents/?hl=es" target="_blank" class="text-muted footericons">
+            <img src="./Assets/images/instagram-logo.png" alt="instagram" class="logo-redes">
+          </a>
+          <a href="https://www.facebook.com/amazingevents/?ref=page_internal" target="_blank"
+            class="text-muted footericons">
+            <img src="./Assets/images/logo-facebook.png" alt="facebook" class="logo-redes">
+          </a>
+          <a href="./contact.html" target="_blank" class="text-muted footericons">
+            <img src="./assets/images/logo-correo.png" alt="logo-redes" class="logo-redes">
+          </a>
+        </div>
+        <div class="col-sm-6 mb-1 mt-1">
+          <span class="text_footer">COHORT 29 - Navarro Medina Facundo</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
